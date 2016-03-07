@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<plugin label="plugins/freemind-mantisbt">
+  <plugin_classpath jar="freemind-mantisbt/axis-1.3.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/axis-jaxrpc-1.3.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/axis-saaj-1.3.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/commons-discovery-0.2.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/mantis-axis-soap-client-1.2.6.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/wsdl4j-1.5.1.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/freemind-mantisbt.jar"/>
+  <plugin_classpath jar="freemind-mantisbt/commons-logging-1.0.4.jar"/>
+  <plugin_action 
+			documentation="Mantis Bug Tracker" 
+			name="Mantis Bug Tracker" 
+			base="freemind.extensions.ModeControllerHookAdapter" 
+			label="plugins/mantis" 
+			class_name="cl.desarrollolibre.mm.MantisPlugin" 
+			instanciation="Once">
+    <plugin_mode class_name="freemind.modes.mindmapmode"/>
+    <plugin_menu location="menu_bar/file/export/Mantis"/>
+  </plugin_action>
+</plugin>
