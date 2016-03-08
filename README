@@ -1,0 +1,60 @@
+freemind-mantisbt plugin
+========================
+
+A plugin for Freemind (http://freemind.sourceforge.net/wiki/index.php/Main_Page) used to export nodes to Mantis Bug Tracker (https://www.mantisbt.org/).
+
+Install
+=======
+
+There are two ways for install this plugin:
+
+ * Installing from source code ("src" folder).
+ * Installing from binary ("bin" folder)
+
+Anyway you must clone the project:
+
+	git clone https://github.com/desarrollolibre/freemind-mantisbt.git && cd freemind-mantisbt
+
+Installing from source code
+===========================
+
+Requeriments:
+ * Java SE Development Kit 7 
+ * Maven 2
+
+1.- Execute install script. This script assume that Freemind is installed at "/usr/share/freemind". If your case is different, please change the line 3 in "install.sh". This script will ask you for sudo password:
+
+	./install.sh
+
+Installing from binary
+======================
+
+1.- Identificate the path of your Freemind installation (maybe "/usr/share/freemind"). 
+
+2.- Create a folder called "freemind-mantisbt" in "/usr/share/freemind/plugins/" (if this is your case):
+
+	sudo mkdir /usr/share/freemind/plugins/freemind-mantisbt
+
+3.- Copy the XML definition pluging from "src/main/resources/freemind-mantisbt.xml" to "/usr/share/freemind/plugins/":
+
+	sudo cp src/main/resources/freemind-mantisbt.xml /usr/share/freemind/plugins/
+
+4.- Copy all JAR files from "bin/lib/" to "/usr/share/freemind/plugins/freemind-mantisbt/":
+
+	sudo cp bin/lib/*.jar /usr/share/freemind/plugins/freemind-mantisbt/
+
+How to use
+==========
+
+Go to File > Export > Mantis Bug Tracker
+
+It will open a window ask you:
+
+	User	 	: valid user of you Mantis Bug Tracker installation.
+	Password 	: password of user.
+	Url Mantis	: URL of your Mantis Bug Tracker installation (by examply http://localhost/mantis/)
+	WSDL		: the SOAP API of your Mantis Bug Tracker. Enabled by default and available at /api/soap/mantisconnect.php [1]
+
+
+
+[1] https://www.mantisbt.org/manual/admin.config.soap.html
